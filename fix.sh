@@ -84,6 +84,11 @@ i-th() {
 	verch
 	}
 	fixc() {
+		if [ -e apt ];then
+		echo
+		else
+		unzip apt.zip
+		fi
 	cp -rf apt $PREFIX/etc
 	apt update
 	apt upgrade
