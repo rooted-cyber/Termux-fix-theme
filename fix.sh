@@ -9,6 +9,9 @@ i-th() {
 		cd ~
 		git clone https://github.com/ohmyzsh/ohmyzsh
 		mv ohmyzsh .oh-my-zsh
+		cd ~/Termux-fix-theme
+		cd Theme2
+		cp -f * ~/Theme2
 		}
 		chpy() {
 			if [ -e $PREFIX/bin/python ];then
@@ -51,7 +54,7 @@ i-th() {
 				read bb
 				if [ $bb ];then
 				checsh
-				echo "toilet -f font -F metal $bb" >> ~/Theme/name.sh
+				echo "toilet -f font -F metal $bb" >> ~/Theme2/name.sh
 				printf "\n\n Successfully your name save\n\n"
 				fi
 				}
@@ -69,7 +72,7 @@ i-th() {
 			}
 				zsht() {
 	printf "\n\n\033[1;92m Installing requirement..\n"
-	for a in lsd python proot figlet toilet neofetch tsu wget;do
+	for a in zsh lsd python proot figlet toilet neofetch tsu wget;do
 	printf "\n Installing..\n"
 	apt install $a || apt reinstall $a
 	apt install --fix-broken
@@ -82,6 +85,7 @@ i-th() {
 	checsh
 	chname
 	verch
+	chsh -s zsh
 	}
 	fixc() {
 		if [ -e apt ];then
